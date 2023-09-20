@@ -18,8 +18,6 @@
 
 
 ## 2023_09_18_作業
-[作業]（https://github.com/maggiechian926/11209-python-school/blob/main/2023.09.11/2023.09.18.作業.ipynb）
-
-
+[作業]（./2023.09.18/）
 
 
