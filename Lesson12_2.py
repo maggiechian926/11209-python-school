@@ -4,3 +4,11 @@ class Player:
     def _play() -> int:
         pass
     
+    def __repr__(self) -> str:
+        descript = ""
+        descript += ""
+        descript += ""
+        descript += ""
+        
+        
+    
