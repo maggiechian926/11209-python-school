@@ -36,5 +36,5 @@
 [作業](.//python作業總覽/2023.09.28作業.ipynb)
 
 # FLASK WED
-[網址]（https://flaskwed.onrender.com）
+[網址]（ https://flaskwed.onrender.com ）
 
