@@ -35,6 +35,6 @@
 # 2023_09_28作業
 [作業](.//python作業總覽/2023.09.28作業.ipynb)
 
-# FLASK WED
+# FLASK WED 動態
 [網址]（ https://flaskwed.onrender.com ）
 
