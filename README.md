@@ -42,5 +42,5 @@
 [網址] （ https://flaskcafe.onrender.com/ ）
 
 ## 2023_10_05作業（檔案存取）
-[作業](.//python作業總覽/2023.10.05作業.ipynb)
+[作業](.//python作業總覽/檔案存取/2023.10.05作業.ipynb)
 
