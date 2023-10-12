@@ -19,6 +19,11 @@ class Window(tk.Tk):
         listbox = tk.Listbox(bottomFrame,listvariable=choicesvar,width=13)
         listbox.pack(pady=20)
         bottomFrame.pack(expand=True,fill='x')
+        
+        listbox.bind("<<ListboxSelect>>",self.user_selected)
+        
+    def user_selected(self,event):
+         print("user selecte")
 
 
 def main():
