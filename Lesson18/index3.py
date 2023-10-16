@@ -10,15 +10,22 @@ class Window(tk.Tk):
         super().__init__(**kwargs)        
         self.title("Image")
         self.geometry("300x250")
-        self.configure(background='#005CAF')
+        self.configure(background='#86A697')
 
 class MyFrame(ttk.LabelFrame):
     def __init__(self,master,title,**kwargs):
         super().__init__(master,text=title,**kwargs)
-        #self.configure(background='#9B90C2')
-        
+        self.aligement = tk.StringVar(value='center')
+       
+        ttk.Radiobutton(self,text="咖哩雞排飯",value='雞排',variable=self.aligement,command=self.choised).grid(column=0,row=0,padx=10)
+        ttk.Radiobutton(self,text="咖哩唐揚雞",value='唐揚雞',variable=self.aligement,command=self.choised).grid(column=1,row=0,padx=10)
+        ttk.Radiobutton(self,text="咖哩炸豬排",value='炸豬排',variable=self.aligement,command=self.choised).grid(column=2,row=0,padx=10)
 
-        self.pack(expand=1, fill='both')
+        self.pack(expand=1,fill='x',padx=10,pady=10)
+        
+    def choised(self):
+        print(self.aligement.get)
+            
 
 
 def main():    
