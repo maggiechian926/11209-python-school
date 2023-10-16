@@ -48,4 +48,4 @@
 [作業](.//python作業總覽/line)
 
 ## 2023_10_12 (line_bot)
-[作業]（.//https://github.com/maggiechian926/Line_bot）
+[作業]（https://github.com/maggiechian926/Line_bot）
