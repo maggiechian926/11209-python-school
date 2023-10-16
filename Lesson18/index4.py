@@ -9,13 +9,35 @@ class Window(tk.Tk):
     def __init__(self,**kwargs):
         super().__init__(**kwargs)        
         self.title("Image")
-        self.geometry("300x250")
+       #self.geometry("300x250")
         #self.configure(background='#77969A')
 
 class MyFrame(tk.LabelFrame):
     def __init__(self,master,title,**kwargs):
         super().__init__(master,text=title,**kwargs)
         self.pack(expand=1, fill="both",padx=10,pady=10)
+        
+        #標題
+        heading = ttk.Label(self,text="會員登入",font=('Helvetica',20),foreground='#81C7D4')
+        heading.grid(column=0,row=0,columnspan=2,padx=(20,0))
+        
+        username_label = ttk.Label(self,text="你的姓名",font=('Helvetica',12))
+        username_label.grid(column=0,row=1,pady=10,padx=(10,1)) 
+        
+        username_entry = ttk.Entry(self)
+        username_entry.grid(column=1,row=1,padx=(0,10))
+        
+        password_label = ttk.Label(self,text="輸入密碼",font=('Helvetica',12))
+        password_label.grid(column=0,row=2,sticky=tk.E,pady=10,padx=(10,1))
+        
+        password_entry = ttk.Entry(self,show='*')
+        password_entry.grid(column=1,row=2,padx=(0,10))     
+        
+        login_botton = ttk.Button(self,text="登入")
+        login_botton.grid(column=1,row=3,sticky=tk.E,padx=(0,10),pady=(0,20))   
+        
+        
+        
        
        
     def choised(self):
@@ -24,7 +46,7 @@ class MyFrame(tk.LabelFrame):
 
 def main():    
     window = Window()
-    myFrame = MyFrame(window,"今天吃咖喱飯！")
+    myFrame = MyFrame(window,"！養樂多木艮！")
     window.mainloop()
 
 if __name__ == "__main__":
