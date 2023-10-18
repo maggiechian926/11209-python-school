@@ -68,22 +68,13 @@ class MyFrame(tk.LabelFrame):
         item_dict = self.field.item(item_id)
         print(item_dict['values'])
         dialog = Getstock(self,)
-        
-      
-        
-        
+              
         
 file = open('台積電.csv','r',encoding='utf-8')
 csv_reader = csv.reader(file)
 TSMC = list(csv_reader)        
             
                 
-        
-        
-        
-        
-        
-        
         
 def main():
     wimdow = Window()
