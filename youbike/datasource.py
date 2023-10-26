@@ -39,3 +39,4 @@ def updata_sqlite_data():
     conn = sqlite3.connect("youbike.db")
     __create_table(conn)
     
+    
