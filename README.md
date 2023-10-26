@@ -51,4 +51,4 @@
 [作業]（https://github.com/maggiechian926/Line_bot ）
 
 ## 台積電資料庫
-［作業］(.//python作業總覽/台積電資料庫)
+［作業］(https://github.com/maggiechian926/11209-python-school/tree/main/python%E4%BD%9C%E6%A5%AD%E7%B8%BD%E8%A6%BD/%E5%8F%B0%E7%A9%8D%E9%9B%BB%E8%B3%87%E6%96%99%E5%BA%AB)
