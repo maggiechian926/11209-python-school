@@ -10,8 +10,8 @@ class Window(tk.Tk):
         
 class Getstock(Dialog):
     
-    def body(self,master):
-        
+    def __init__(self,master,values):
+        self.values = values
         super().__init__(master)
         self.title("個股資料")
          
@@ -37,11 +37,13 @@ class Getstock(Dialog):
 class MyFrame(tk.LabelFrame):
     def __init__(self,master,title,**kwargs):
         super().__init__(master,text=title,**kwargs)
-        self.pack(expand=1,fill='both',padx=10,pady=10)
+        self.pack()
+        #卷軸
         scrollbar = ttk.Scrollbar(self, orient='vertical')
         scrollbar.pack(side='right', fill='y')
         
-        self.field =ttk.Treeview(self,columns=['#1','#2','#3','#4','#5','#6','#7'],show="headings")
+        self.field =ttk.Treeview(self,columns=['#1','#2','#3','#4','#5','#6','#7'],show="headings", yscrollcommand=scrollbar.set)
+        scrollbar.configure(command=self.tree.yview)
         
         self.field.heading('#1',text="Date")
         self.field.heading('#2',text="Open")
@@ -50,7 +52,7 @@ class MyFrame(tk.LabelFrame):
         self.field.heading('#5',text="Close")
         self.field.heading('#6',text="Adj Close")
         self.field.heading('#7',text="Volume")
-        
+        self.field.pack()
         
         file = open('台積電.csv','r', encoding='utf-8')
         csv_reader = csv.reader(file)
@@ -67,12 +69,10 @@ class MyFrame(tk.LabelFrame):
         item_id = self.field.selection()[0]
         item_dict = self.field.item(item_id)
         print(item_dict['values'])
-        dialog = Getstock(self,)
+        getstock = Getstock(self,values)
               
         
-file = open('台積電.csv','r',encoding='utf-8')
-csv_reader = csv.reader(file)
-TSMC = list(csv_reader)        
+       
             
                 
         
