@@ -1,11 +1,19 @@
 
 import tkinter as tk  
 from tkinter import ttk
-
+from tkinter import messagebox
+import datasource
 
 class Window(tk.Tk):
     def __init__(self, **kwargs): #自定義 
-        super().__init__(**kwargs) #呼叫附類別
+        super().__init__(**kwargs) #呼叫附類別 
+        try:
+            datasource.download_youbike_data()
+        except Exception as e:
+            messagebox.showerror("錯誤",f'{e}\n將關閉應用程式\n請稍後再試') #show 下載失敗的視窗ok
+            self.destroy()
+            
+        
         
 def main():
     window = Window()
