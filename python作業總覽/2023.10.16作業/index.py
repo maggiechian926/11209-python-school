@@ -22,7 +22,7 @@ class Getstock(Dialog):
         tk.Label(master,text='收市價').grid(row=4,column=1, sticky=tk.W)
         tk.Label(master,text='收盤價').grid(row=5,column=1, sticky=tk.W)
         tk.Label(master,text='成交量').grid(row=6,column=1, sticky=tk.W)
-        
+     
         self.date= tk.Label(master, width=16, show='*', sticky=tk.E)
         self.opan = tk.Label(master, width=16, show='*', sticky=tk.E)
         self.high = tk.Label(master, width=16, show='*',sticky=tk.E)
