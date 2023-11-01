@@ -14,7 +14,6 @@ class Window(tk.Tk):
         except Exception:
             messagebox.showerror("錯誤",'網路不正常\n將關閉應用程式\n請稍後再試')
             self.destroy()           
-         # 添加搜索框和搜索按钮
         search_frame = tk.Frame(self)
         tk.Label(search_frame, text="站點名稱搜索：", font=("arial", 12)).pack(side='left', padx=5, pady=5)
         self.search_entry = tk.Entry(search_frame)
@@ -26,7 +25,7 @@ class Window(tk.Tk):
         #---------建立介面------------------------
         #print(datasource.lastest_datetime_data())
         topFrame = tk.Frame(self,relief=tk.GROOVE,borderwidth=1)
-        tk.Label(topFrame,text="台北市youbike及時資料",font=("arial", 20), bg="#333333", fg='#ffffff',padx=10,pady=10).pack(padx=20,pady=20)
+        tk.Label(topFrame,text="台北市youbike及時資料",font=("arial", 20), bg="#007799", fg='#ffffff',padx=10,pady=10).pack(padx=20,pady=20)
         topFrame.pack(pady=30)
 
         bottomFrame = tk.Frame(self)
@@ -40,11 +39,9 @@ class Window(tk.Tk):
         print(datasource.search_sitename('三'))
         
     def perform_search(self):
-            # 获取搜索关键字并执行搜索
+            
             query = self.search_entry.get()
             search_result = datasource.search_sitename(query)
-            
-            # 更新 treeView 显示搜索结果
             self.youbikeTreeView.update_content(search_result)
 
         
