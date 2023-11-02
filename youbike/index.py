@@ -27,8 +27,9 @@ class Window(tk.Tk):
         #----------建立搜尋------------------------
         middleFrame = ttk.LabelFrame(self,text='')
         tk.Label(middleFrame,text='站點名稱搜尋:').pack(side='left')
-        self.search_entry = tk.Entry(middleFrame)
-        self.search_entry.pack(side='left')
+        search_entry = tk.Entry(middleFrame)
+        search_entry.bind("<KeyRelease>", self.OnEntryClick) 
+        search_entry.pack(side='left')
         middleFrame.pack(fill='x',padx=20)
         #----------------------------------------
 
@@ -45,8 +46,16 @@ class Window(tk.Tk):
         bottomFrame.pack(pady=(0,30),padx=20)
         #-------------------------------------------
         
-        
-
+    def OnEntryClick(self,event): #在event裡面有參考
+        searchEntry = event.widget
+        #使用者輸入文字
+        input_word = searchEntry.get()
+        if input_word == "":
+            lastest_data = datasource.lastest_datetime_data()
+            self.youbikeTreeView.update_content(lastest_data)
+        else:
+            search_data = datasource.search_sitename(word=input_word)
+            self.youbikeTreeView.update_content(search_data)
         
 
 
