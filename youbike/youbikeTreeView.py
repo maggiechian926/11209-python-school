@@ -21,7 +21,14 @@ class YoubikeTreeView(ttk.Treeview):
         self.column('sbi',width=50)
         self.column('bemp',width=50)
         
+        #---------bind button1-------
+        self.bind('<Button-1>',self.selectedItem)
+
+    
+        
+        
     def update_content(self,site_datas): 
+        
         
         '''更新內容'''
         #清除所有內容
@@ -29,7 +36,13 @@ class YoubikeTreeView(ttk.Treeview):
             self.delete(i)
         
         for site in site_datas:
-            self.insert('','end',values=site)
+            self.insert('','end',text=f"abc{index}",values=site)
+
+    def selectedItem (self,event):
+        selectedItem = self.focus()
+        print(self.itme(selectedItem))
+        print(selectedItem)
+
 
         
        
