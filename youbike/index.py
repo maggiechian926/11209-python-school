@@ -19,17 +19,17 @@ class Window(tk.Tk):
         #---------建立介面------------------------
         #print(datasource.lastest_datetime_data())
         topFrame = tk.Frame(self,relief=tk.GROOVE,borderwidth=1)
-        tk.Label(topFrame,text="台北市youbike及時資料",font=("arial", 20), bg="#008888", fg='#ffffff',padx=10,pady=10).pack(padx=20,pady=20)
+        tk.Label(topFrame,text="台北市youbike及時資料",font=("arial", 20), bg="#EB7A77", fg='#ffffff',padx=10,pady=10).pack(padx=20,pady=20)
         topFrame.pack(pady=30)
         #----------------------------------------------------
         
         
         #----------建立搜尋------------------------
-        middleFrame = ttk.LabelFrame(self,text='站點')
+        middleFrame = ttk.LabelFrame(self,text='')
         tk.Label(middleFrame,text='站點名稱搜尋:').pack(side='left')
         self.search_entry = tk.Entry(middleFrame)
         self.search_entry.pack(side='left')
-        middleFrame.pack(expand=True,fill='x')
+        middleFrame.pack(fill='x',padx=20)
         #----------------------------------------
 
         #---------------建立treeView---------------
@@ -42,7 +42,7 @@ class Window(tk.Tk):
         vsb = ttk.Scrollbar(bottomFrame, orient="vertical", command=self.youbikeTreeView.yview)
         vsb.pack(side='left',fill='y')
         self.youbikeTreeView.configure(yscrollcommand=vsb.set)
-        bottomFrame.pack(pady=30,padx=20)
+        bottomFrame.pack(pady=(0,30),padx=20)
         #-------------------------------------------
         
         
