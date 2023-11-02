@@ -14,16 +14,22 @@ class Window(tk.Tk):
         except Exception:
             messagebox.showerror("錯誤",'網路不正常\n將關閉應用程式\n請稍後再試')
             self.destroy()           
-        
+        search_frame = tk.Frame(self)
+        tk.Label(search_frame, text="站點名稱搜索：", font=("arial", 12)).pack(side='left', padx=5, pady=5)
+        self.search_entry = tk.Entry(search_frame)
+        self.search_entry.pack(side='left', padx=5, pady=5)
+        search_button = tk.Button(search_frame, text="搜尋", command=self.perform_search)
+        search_button.pack(side='left', padx=5, pady=5)
+        search_frame.pack()
 
         #---------建立介面------------------------
         #print(datasource.lastest_datetime_data())
         topFrame = tk.Frame(self,relief=tk.GROOVE,borderwidth=1)
-        tk.Label(topFrame,text="台北市youbike及時資料",font=("arial", 20), bg="	#008888", fg='#ffffff',padx=10,pady=10).pack(padx=20,pady=20)
+        tk.Label(topFrame,text="台北市youbike及時資料",font=("arial", 20), bg="#007799", fg='#ffffff',padx=10,pady=10).pack(padx=20,pady=20)
         topFrame.pack(pady=30)
 
         bottomFrame = tk.Frame(self)
-        #---------------建立treeView---------------
+        #---------------建立treeView---------------＃
         self.youbikeTreeView = YoubikeTreeView(bottomFrame,show="headings",columns=('sna','mday','sarea','ar','tot','sbi','bemp'))
         self.youbikeTreeView.pack(side='left')
         vsb = ttk.Scrollbar(bottomFrame, orient="vertical", command=self.youbikeTreeView.yview)
@@ -32,6 +38,11 @@ class Window(tk.Tk):
         bottomFrame.pack(pady=30)
         print(datasource.search_sitename('三'))
         
+    def perform_search(self):
+            
+            query = self.search_entry.get()
+            search_result = datasource.search_sitename(query)
+            self.youbikeTreeView.update_content(search_result)
 
         
 
