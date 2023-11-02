@@ -19,17 +19,17 @@ class Window(tk.Tk):
         #---------建立介面------------------------
         #print(datasource.lastest_datetime_data())
         topFrame = tk.Frame(self,relief=tk.GROOVE,borderwidth=1)
-        tk.Label(topFrame,text="台北市youbike及時資料",font=("arial", 20), bg="#EB7A77", fg='#ffffff',padx=10,pady=10).pack(padx=20,pady=20)
+        tk.Label(topFrame,text="台北市youbike及時資料",font=("arial", 20), bg="#333333", fg='#ffffff',padx=10,pady=10).pack(padx=20,pady=20)
         topFrame.pack(pady=30)
-        #----------------------------------------------------
-        
-        
+        #---------------------------------------
+
+
         #----------建立搜尋------------------------
         middleFrame = ttk.LabelFrame(self,text='')
         tk.Label(middleFrame,text='站點名稱搜尋:').pack(side='left')
         search_entry = tk.Entry(middleFrame)
-        search_entry.bind("<KeyRelease>", self.OnEntryClick) 
-        search_entry.pack(side='left')
+        search_entry.bind("<KeyRelease>", self.OnEntryClick)
+        search_entry.pack(side='left')        
         middleFrame.pack(fill='x',padx=20)
         #----------------------------------------
 
@@ -45,10 +45,10 @@ class Window(tk.Tk):
         self.youbikeTreeView.configure(yscrollcommand=vsb.set)
         bottomFrame.pack(pady=(0,30),padx=20)
         #-------------------------------------------
-        
-    def OnEntryClick(self,event): #在event裡面有參考
+    
+    def OnEntryClick(self,event):
         searchEntry = event.widget
-        #使用者輸入文字
+        #使用者輸入的文字
         input_word = searchEntry.get()
         if input_word == "":
             lastest_data = datasource.lastest_datetime_data()
@@ -56,6 +56,10 @@ class Window(tk.Tk):
         else:
             search_data = datasource.search_sitename(word=input_word)
             self.youbikeTreeView.update_content(search_data)
+        
+        
+        
+
         
 
 

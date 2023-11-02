@@ -87,5 +87,3 @@ def search_sitename(word:str) -> list[tuple]:
     conn.close()
     return rows
 
-
-
