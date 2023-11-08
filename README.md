@@ -55,4 +55,4 @@
 
 
 ## 11.08作業
-！[作業]（.//Users/mugen/Documents/11209_python_school/GitHub/11209-python-school/2023-11-8作業.jpg）
+！[作業]（./2023-11-8作業.jpg）
