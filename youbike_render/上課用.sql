@@ -39,3 +39,5 @@ WHERE (更新時間,站點名稱) IN (
 	FROM 台北市youbike
 	GROUP BY 站點名稱
 ) AND 站點名稱 like '%台北%'
+
+概念是將目前 table 同時命名為「a」,「b」後，用 join 語法來達成自己與自己比對資料的結果，再用 select distinct 的功能刪除重複資料
