@@ -29,7 +29,7 @@ class Window(tk.Tk):
         tk.Label(middleFrame,text='站點名稱搜尋:').pack(side='left')
         search_entry = tk.Entry(middleFrame)
         search_entry.bind("<KeyRelease>", self.OnEntryClick)
-        search_entry.pack(side='left')        
+        search_ entry.pack(side='left')       
         middleFrame.pack(fill='x',padx=20)
         #----------------------------------------
 
