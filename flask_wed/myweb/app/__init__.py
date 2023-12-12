@@ -3,6 +3,7 @@ from app.route import hello_world, index
 
 def create_app():
     app = Flask(__name__)
-    app.add_url_rule('/', '/', hello_world)
-    app.add_url_rule('/index', 'index', index)
+    app.add_url_rule('/', '/', index)
+    app.add_url_rule('/index', 'index', hello_world)
+    
     return app

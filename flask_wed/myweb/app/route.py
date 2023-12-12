@@ -1,8 +1,14 @@
 
 from flask import render_template
+import dash
+from dash import html
 
 def hello_world():
-    return "Hello, MVC框架!"
+    return "Hello, maggie!"
+
+
 
 def index():
-    return render_template('index.html') 
+    title = "Suicide Ideation"
+    big_word = "Suicide Ideation"
+    return render_template('index.html',title=title,big_word=big_word) 
