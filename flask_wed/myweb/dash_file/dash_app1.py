@@ -10,7 +10,7 @@ import dash_table
 import pandas as pd
 import plotly.express as px
 
-df = pd.read_csv('/workspaces/web測試用/dash_file/方式.csv')
+df = pd.read_csv('dash_file/方式.csv')
 
 #這是註解
 #

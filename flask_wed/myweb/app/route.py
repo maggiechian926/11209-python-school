@@ -1,12 +1,10 @@
 
 from flask import render_template
 import dash
-from dash import html
+
 
 def hello_world():
     return "Hello, maggie!"
-
-
 
 def index():
     title = "Suicide Ideation"

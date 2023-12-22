@@ -1,0 +1,23 @@
+.body{
+    background-color:#2E5C6E ;
+    color: blue;
+    margin: 1200px;
+}
+
+
+.button_box{
+    width: 80%;
+    margin: 0 auto;  
+    background-color: #97b9c7;
+}
+.button_box1 {
+    width: 1200px;
+    margin-bottom: auto;
+    margin: auto;
+    background-color: #1b8cb8;
+}
+
+.me-1{
+    color: #2E5C6E;
+    margin: 20px;
+}
